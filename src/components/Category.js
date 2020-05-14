@@ -5,7 +5,6 @@ const Category = ({
   strCategory,
   strCategoryDescription,
   strCategoryThumb,
-  clickCategory,
 }) => {
   return (
     <div>

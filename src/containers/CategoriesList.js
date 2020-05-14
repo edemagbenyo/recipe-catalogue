@@ -10,8 +10,7 @@ const CategoriesList = (props) => {
   },[fetchCategories]);
   return (
     <div>
-      {(categories.length===0) ? <div>No Category</div> : categories.map(cat=><Category key={cat.idCategory} {...cat}/>) }
-      
+      {(categories.length===0) ? <div>Loading...</div> : categories.map(cat=><Category key={cat.idCategory} {...cat}/>) }
     </div>
   );
 };
@@ -25,7 +24,6 @@ const mapDispathToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return{
     categories: state.categories,
   }

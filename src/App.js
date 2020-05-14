@@ -1,12 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from "react";
 // import './App.css';
+import Routes from "./router/index";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <Header />
+      {Routes}
+      <footer>Footer information</footer>
+      <Footer />
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { SET_INGREDIENT, FETCH_DISHES } from './types';
+import { SET_INGREDIENT, FETCH_DISHES, FETCHING } from './types';
 
 
 export const setIngredient = (ingredient) => ({
@@ -6,6 +6,10 @@ export const setIngredient = (ingredient) => ({
   ingredient,
 });
 export const searchByIngredients = (ingredient) => (dispatch) => {
+  dispatch({
+    type:FETCHING,
+    isFetching:true
+  })
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
     .then((response) => response.json())
     .then((dishes) => {

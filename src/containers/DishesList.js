@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => {
   console.log(state);
   return{
-    dishes: state.dishes,
+    dishes: state.dishes.dishes,
   }
 };
 

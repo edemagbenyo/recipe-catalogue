@@ -39,7 +39,7 @@ const mapDispathToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   categories: state.categories,
-  dishes: state.searched.dishes,
+  dishes: state.dishes.dishes,
   ingredient: state.searched.ingredient,
 });
 

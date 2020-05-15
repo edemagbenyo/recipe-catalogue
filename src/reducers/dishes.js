@@ -1,9 +1,11 @@
-import { FETCH_DISHES } from '../actions/types';
+import { FETCH_DISHES, FETCHING } from "../actions/types";
 
-export default (state = [], action) => {
+export default (state = { dishes: [], isFetching: false }, action) => {
   switch (action.type) {
     case FETCH_DISHES:
-      return [...action.dishes];
+      return { ...state, dishes: action.dishes, isFetching: false };
+    case FETCHING:
+      return { ...state, isFetching: true };
     default:
       return state;
   }

@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import {
   searchByIngredients,
   setIngredient,
-} from "../actions/searchIngredient";
+} from '../actions/searchIngredient';
 
 const IngredientSearch = (props) => {
-  const { searchByIngredients,setIngredient } = props;
-  const [ingredient, setStateIngredient] = useState("");
+  const { searchByIngredients, setIngredient } = props;
+  const [ingredient, setStateIngredient] = useState('');
   const submitIngredient = (e) => {
     e.preventDefault();
-    setIngredient(ingredient)
+    setIngredient(ingredient);
     searchByIngredients(ingredient);
   };
   return (
@@ -29,12 +29,9 @@ const IngredientSearch = (props) => {
   );
 };
 
-const mapDispathToProps = (dispatch) => {
-  return {
-    searchByIngredients: (ingredient) =>
-      dispatch(searchByIngredients(ingredient)),
-    setIngredient: (ingredient) => dispatch(setIngredient(ingredient)),
-  };
-};
+const mapDispathToProps = (dispatch) => ({
+  searchByIngredients: (ingredient) => dispatch(searchByIngredients(ingredient)),
+  setIngredient: (ingredient) => dispatch(setIngredient(ingredient)),
+});
 
 export default connect(null, mapDispathToProps)(IngredientSearch);

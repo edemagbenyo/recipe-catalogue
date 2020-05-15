@@ -1,7 +1,7 @@
 // @flow
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const SearchResult = (props) => {
   const { dishes } = props;
@@ -11,7 +11,7 @@ const SearchResult = (props) => {
         <div>No Dish found</div>
       ) : (
         <ul>
-          {dishes.map(({idMeal,strMeal}) => (
+          {dishes.map(({ idMeal, strMeal }) => (
             <li key={idMeal}>{strMeal}</li>
           ))}
         </ul>
@@ -27,10 +27,8 @@ SearchResult.propTypes = {
   dishes: PropTypes.array,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    dishes: state.searched.dishes,
-  };
-};
+const mapStateToProps = (state) => ({
+  dishes: state.searched.dishes,
+});
 
 export default connect(mapStateToProps, null)(SearchResult);

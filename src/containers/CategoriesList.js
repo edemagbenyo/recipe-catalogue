@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { fetchCategories } from "../actions/categories";
-import Category from "../components/Category";
-import { Redirect } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { fetchCategories } from '../actions/categories';
+import Category from '../components/Category';
 import '../styles/home.scss';
 
 const CategoriesList = (props) => {
-  const { categories, fetchCategories, dishes, ingredient } = props;
+  const {
+    categories, fetchCategories, dishes, ingredient,
+  } = props;
   useEffect(() => {
     fetchCategories();
   }, [fetchCategories, dishes]);
@@ -14,7 +16,7 @@ const CategoriesList = (props) => {
   return (
     <div>
       {dishes.length > 0 ? (
-        <Redirect push to={{ pathname: "/search/"+ingredient }} />
+        <Redirect push to={{ pathname: `/search/${ingredient}` }} />
       ) : (
         <div>
 
@@ -29,20 +31,16 @@ const CategoriesList = (props) => {
   );
 };
 
-const mapDispathToProps = (dispatch) => {
-  return {
-    fetchCategories: () => {
-      dispatch(fetchCategories());
-    }
-  };
-};
+const mapDispathToProps = (dispatch) => ({
+  fetchCategories: () => {
+    dispatch(fetchCategories());
+  },
+});
 
-const mapStateToProps = (state) => {
-  return {
-    categories: state.categories,
-    dishes:state.searched.dishes,
-    ingredient:state.searched.ingredient
-  };
-};
+const mapStateToProps = (state) => ({
+  categories: state.categories,
+  dishes: state.searched.dishes,
+  ingredient: state.searched.ingredient,
+});
 
 export default connect(mapStateToProps, mapDispathToProps)(CategoriesList);

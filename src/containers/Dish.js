@@ -19,7 +19,7 @@ const Dish = (props) => {
     <p>{strInstructions}</p>
     <p>Ingredients</p>
     <ul>
-      {(ingredients.length==0)?<li>No Ingredient available</li> : ingredients.map((ingredient,index)=><li key={index}>{ingredient}</li>)}
+      {(ingredients.length===0)?<li>No Ingredient available</li> : ingredients.map((ingredient,index)=><li key={index}>{ingredient}</li>)}
     </ul>
     
 

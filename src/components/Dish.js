@@ -7,7 +7,7 @@ export const Dish = (props) => {
   const { url } = useRouteMatch();
 
   return (
-    <div>
+    <div className="dish">
       <Link to={`${url}/${idMeal}`}><h2>{strMeal}</h2></Link>
       <img src={strMealThumb} alt={strMeal} />
     </div>

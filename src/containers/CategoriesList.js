@@ -14,11 +14,11 @@ const CategoriesList = (props) => {
   }, [fetchCategories, dishes]);
 
   return (
-    <div>
+    <div className="categoriesList">
       {dishes.length > 0 ? (
         <Redirect push to={{ pathname: `/search/${ingredient}` }} />
       ) : (
-        <div>
+        <div className="categories">
 
           {categories.length === 0 ? (
             <div>Loading...</div>

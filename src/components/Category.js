@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '../styles/categories.scss';
 const Category = ({
   strCategory,
   strCategoryDescription,
   strCategoryThumb,
 }) => (
-  <div>
+  <section className="category">
     <Link to={`/${strCategory}`}><h1>{strCategory}</h1></Link>
-    <p>{strCategoryDescription}</p>
     <img alt={strCategory} src={strCategoryThumb} />
-  </div>
+    <p>{strCategoryDescription}</p>
+  </section>
 );
 
 export default Category;

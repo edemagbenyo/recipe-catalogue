@@ -1,6 +1,38 @@
-header{
+header {
   background-color: red;
-  h1{
-    margin:0
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  h1 {
+    margin: 0;
+    width: 20%;
+    color: #ffffff;
+  }
+  .searchForm {
+    width: 40%;
+    form {
+      input[type="text"] {
+        padding: 7px;
+        font-size: 1.2em;
+        outline: none;
+        border: none;
+        width: 70%;
+      }
+      // input[type=text]:sele{
+      //   outline: ;
+      // }
+      button {
+        border-radius: none;
+        font-size: 1.2em;
+        padding: 7px;
+        border: none;
+        border-left: 1px solid #cccccc;
+      }
+    }
+  }
+  & > div {
+    span {
+      color: white;
+    }
   }
 }

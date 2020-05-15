@@ -4,8 +4,11 @@ import IngredientSearch from '../containers/IngredientSearch';
 
 const Header = () => (
   <header>
-    <h1>Catalogue of foods</h1>
+    <h1>Delicias</h1>
     <IngredientSearch />
+    <div>
+      <span>Get your favourite dish recipe.</span>
+    </div>
   </header>
 );
 

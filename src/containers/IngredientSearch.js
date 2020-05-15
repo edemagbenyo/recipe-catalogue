@@ -14,15 +14,16 @@ const IngredientSearch = (props) => {
     searchByIngredients(ingredient);
   };
   return (
-    <div>
+    <div className="searchForm">
       <form onSubmit={submitIngredient}>
         <label>
-          Filter by Ingredients
-          <input
+          <input type="text"
+          placeholder="Search by ingredient"
             name="ingredientInput"
             onChange={(e) => setStateIngredient(e.target.value)}
             value={ingredient}
           />
+          <button type="submit">Search</button>
         </label>
       </form>
     </div>

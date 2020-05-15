@@ -1,11 +1,15 @@
 import React from 'react';
-
+import '../styles/header.scss';
+import IngredientSearch from '../containers/IngredientSearch';
 
  const Header = () => {
   return (
-    <div>
+    <header>
       <h1>Catalogue of foods</h1>
-    </div>
+      <IngredientSearch/>
+    </header>
   );
 };
+
+
 export default Header;

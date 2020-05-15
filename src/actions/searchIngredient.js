@@ -1,5 +1,12 @@
-import { SEARCH_INGREDIENT } from "./types"
+import { SEARCH_INGREDIENT, SET_INGREDIENT } from "./types"
 
+
+export const setIngredient = (ingredient)=>{
+  return {
+    type:SET_INGREDIENT,
+    ingredient
+  }
+}
 export const searchByIngredients = (ingredient)=>dispatch =>{
   fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i='+ingredient)
   .then(response=>response.json())

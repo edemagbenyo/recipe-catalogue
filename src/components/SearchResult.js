@@ -29,7 +29,7 @@ SearchResult.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    dishes: state.searched,
+    dishes: state.searched.dishes,
   };
 };
 

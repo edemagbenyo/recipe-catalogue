@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/header.scss';
-import IngredientSearch from '../containers/IngredientSearch';
 import { Link } from 'react-router-dom';
+import IngredientSearch from '../containers/IngredientSearch';
 
 const Header = () => (
   <header>

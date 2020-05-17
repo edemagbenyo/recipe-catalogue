@@ -1,10 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CategoriesList from "../containers/CategoriesList";
-import DishesList from "../containers/DishesList";
-import Dish from "../containers/Dish";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CategoriesList from '../containers/CategoriesList';
+import DishesList from '../containers/DishesList';
+import Dish from '../containers/Dish';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 // import SearchResult from '../components/SearchResult';
 
 export default (

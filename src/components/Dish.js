@@ -1,8 +1,9 @@
 // @flow
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export const Dish = (props) => {
+const Dish = props => {
   const { strMeal, strMealThumb, idMeal } = props;
   const { url } = useRouteMatch();
 
@@ -13,3 +14,15 @@ export const Dish = (props) => {
     </div>
   );
 };
+Dish.defaultProps = {
+  strMeal: '',
+  strMealThumb: '',
+  idMeal: '',
+};
+Dish.propTypes = {
+  strMeal: PropTypes.string,
+  strMealThumb: PropTypes.string,
+  idMeal: PropTypes.string,
+};
+
+export { Dish };

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/categories.scss';
+import PropTypes from 'prop-types';
+
 const Category = ({
   strCategory,
   strCategoryDescription,
@@ -12,5 +14,16 @@ const Category = ({
     <p>{strCategoryDescription}</p>
   </section>
 );
+
+Category.defaultProps = {
+  strCategory: '',
+  strCategoryDescription: '',
+  strCategoryThumb: '',
+};
+Category.propTypes = {
+  strCategory: PropTypes.string,
+  strCategoryDescription: PropTypes.string,
+  strCategoryThumb: PropTypes.string,
+};
 
 export default Category;

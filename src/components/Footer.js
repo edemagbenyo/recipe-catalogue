@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/footer.scss";
+import React from 'react';
+import '../styles/footer.scss';
 
 const Footer = () => (
   <footer>
@@ -10,13 +10,14 @@ const Footer = () => (
           <li>
             <a href="/">About us</a>
           </li>
-          <li ><a href="/">Contact us</a></li>
+          <li><a href="/">Contact us</a></li>
         </ul>
       </div>
       <p>
-        {" "}
+        {' '}
         Delicias helps you find the best recipes for your favourite dish. Dishes
-        are categorize according to your taste.{" "}
+        are categorize according to your taste.
+        {' '}
       </p>
     </div>
 

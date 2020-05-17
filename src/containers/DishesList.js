@@ -28,7 +28,9 @@ DishesList.defaultProps = {
   fetchDishes: () => undefined,
 };
 DishesList.propTypes = {
-  dishes: PropTypes.arrayOf(PropTypes.oneOfType([{}])),
+  dishes: PropTypes.arrayOf(PropTypes.shape({
+    strCategory: PropTypes.string,
+  })),
   fetchDishes: PropTypes.func,
 };
 const mapDispatchToProps = dispatch => ({

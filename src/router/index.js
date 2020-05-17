@@ -11,16 +11,16 @@ export default (
   <Router>
     <Header />
     <Switch>
-      <Route exact path="/" component={CategoriesList} />
-      <Route exact path="/:categoryId">
-        <DishesList />
-      </Route>
-      <Route exact path="/search/:ingredient">
-        <DishesList />
-      </Route>
       <Route path="/:categoryId/:dishId">
         <Dish />
       </Route>
+      <Route path="/:categoryId">
+        <DishesList />
+      </Route>
+      <Route path="/search/:ingredient">
+        <DishesList />
+      </Route>
+      <Route path="/" component={CategoriesList} />
     </Switch>
     <Footer />
   </Router>

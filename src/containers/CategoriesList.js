@@ -33,15 +33,19 @@ const CategoriesList = props => {
 };
 
 CategoriesList.defaultProps = {
-  categories: '',
-  dishes: '',
+  categories: [],
+  dishes: [],
   ingredient: '',
   fetchCategories: () => undefined,
   isSearching: false,
 };
 CategoriesList.propTypes = {
-  categories: PropTypes.string,
-  dishes: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    strCategory: PropTypes.string,
+  })),
+  dishes: PropTypes.arrayOf(PropTypes.shape({
+    strMeal: PropTypes.string,
+  })),
   ingredient: PropTypes.string,
   fetchCategories: PropTypes.func,
   isSearching: PropTypes.bool,

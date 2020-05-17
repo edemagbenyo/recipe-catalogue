@@ -8,7 +8,8 @@ export const setIngredient = (ingredient) => ({
 export const searchByIngredients = (ingredient) => (dispatch) => {
   dispatch({
     type:FETCHING,
-    isFetching:true
+    isFetching:true,
+    isSearching:true
   })
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`)
     .then((response) => response.json())

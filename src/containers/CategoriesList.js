@@ -7,7 +7,7 @@ import '../styles/home.scss';
 
 const CategoriesList = (props) => {
   const {
-    categories, fetchCategories, dishes, ingredient,
+    categories, fetchCategories, dishes, ingredient, isSearching
   } = props;
   useEffect(() => {
     fetchCategories();
@@ -15,7 +15,7 @@ const CategoriesList = (props) => {
 
   return (
     <div className="categoriesList">
-      {dishes.length > 0 ? (
+      {isSearching ? (
         <Redirect push to={{ pathname: `/search/${ingredient}` }} />
       ) : (
         <div className="categories">
@@ -41,6 +41,7 @@ const mapStateToProps = (state) => ({
   categories: state.categories,
   dishes: state.dishes.dishes,
   ingredient: state.searched.ingredient,
+  isSearching:state.dishes.isSearching
 });
 
 export default connect(mapStateToProps, mapDispathToProps)(CategoriesList);

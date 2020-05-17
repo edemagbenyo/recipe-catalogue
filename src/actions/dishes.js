@@ -4,10 +4,9 @@ export const fetchDishes = (category) => (dispatch) => {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
     .then((response) => response.json())
     .then((dishes) => {
-      console.log('from url', dishes);
       dispatch({
         type: FETCH_DISHES,
-        dishes: dishes.meals,
+        dishes: dishes.meals || [],
       });
     })
     .catch((err) => dispatch({

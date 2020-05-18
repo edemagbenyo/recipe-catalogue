@@ -11,7 +11,9 @@ const DishesList = props => {
   const { categoryId } = useParams();
   const { fetchDishes, dishes } = props;
   useEffect(() => {
-    categoryId && fetchDishes(categoryId);
+    if (categoryId) {
+      fetchDishes(categoryId);
+    }
   }, [fetchDishes, categoryId]);
   return (
     <div className="dishesList">
@@ -29,18 +31,17 @@ DishesList.defaultProps = {
   fetchDishes: () => undefined,
 };
 DishesList.propTypes = {
-  dishes: PropTypes.arrayOf(PropTypes.shape({
-    strCategory: PropTypes.string,
-  })),
+  dishes: PropTypes.arrayOf(
+    PropTypes.shape({
+      strCategory: PropTypes.string,
+    }),
+  ),
   fetchDishes: PropTypes.func,
 };
 const mapDispatchToProps = dispatch => ({
   fetchDishes: category => dispatch(fetchDishes(category)),
 });
-const mapStateToProps = state => {
-  console.log(state);
-  return{
-    dishes: state.dishes.dishes,
-  }
-};
+const mapStateToProps = state => ({
+  dishes: state.dishes.dishes,
+});
 export default connect(mapStateToProps, mapDispatchToProps)(DishesList);

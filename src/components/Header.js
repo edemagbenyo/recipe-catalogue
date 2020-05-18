@@ -6,7 +6,7 @@ import IngredientSearch from '../containers/IngredientSearch';
 const Header = () => (
   <header>
     <Link to="/">
-      <h1>Delicias</h1>
+      <h1>Recipias</h1>
     </Link>
     <IngredientSearch />
     <div>

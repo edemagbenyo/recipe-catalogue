@@ -9,7 +9,7 @@
 
 Catalogue of recipes provides you the recipes for the best dishes. Browse per category of dishes and find the recipe for you favourite dish. You can also find dishes based on the type of recipes you want.
 
-![Screenshot of the webpage]()
+![Screenshot of the webpage](https://github.com/edemagbenyo/recipe-catalogue/blob/implement-catalogue/src/images/recipes.gif)
 
 ## Prerequisites
 

@@ -1,7 +1,7 @@
-import React from "react";
-import "../styles/header.scss";
-import { Link } from "react-router-dom";
-import IngredientSearch from "../containers/IngredientSearch";
+import React from 'react';
+import '../styles/header.scss';
+import { Link } from 'react-router-dom';
+import IngredientSearch from '../containers/IngredientSearch';
 
 const Header = () => (
   <header>

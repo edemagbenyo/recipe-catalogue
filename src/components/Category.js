@@ -14,7 +14,7 @@ const Category = ({
   return (
     <section className="category">
       <Link to={`/${strCategory}`}><h1>{strCategory}</h1></Link>
-      <img role="image" alt={strCategory} src={strCategoryThumb} />
+      <img data-testid="image" alt={strCategory} src={strCategoryThumb} />
       <p>{strCategoryDescription}</p>
     </section>
   );

@@ -9,7 +9,7 @@ const fetchCategories = () => dispatch => {
         categories: categories.categories,
       });
     })
-    .catch(error => console.log(error));
+    .catch(error => error);
 };
 
 export { fetchCategories };

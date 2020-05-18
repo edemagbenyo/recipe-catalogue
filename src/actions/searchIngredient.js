@@ -20,5 +20,5 @@ export const searchByIngredients = ingredient => dispatch => {
         isSearching: false,
       });
     })
-    .catch(err => console.log(err));
+    .catch(err => err);
 };

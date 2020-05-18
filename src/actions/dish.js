@@ -9,7 +9,7 @@ const fetchDish = dishId => dispatch => {
         dish: dish.meals[0],
       });
     })
-    .catch(err => console.log(err));
+    .catch(err => err);
 };
 
 export { fetchDish };

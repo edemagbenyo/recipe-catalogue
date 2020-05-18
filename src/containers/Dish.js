@@ -14,7 +14,6 @@ const Dish = props => {
   }, [fetchDish, dishId]);
   const { strMeal, strInstructions, strMealThumb } = dish;
   const ingredients = getIngredients(dish);
-  console.log(dish);
   let i = 0;
 
   return (

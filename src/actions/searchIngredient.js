@@ -17,6 +17,7 @@ export const searchByIngredients = ingredient => dispatch => {
       dispatch({
         type: FETCH_DISHES,
         dishes: dishes.meals || [],
+        isSearching:false
       });
     })
     .catch(err => console.log(err));

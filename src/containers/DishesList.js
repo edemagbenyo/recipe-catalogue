@@ -16,7 +16,7 @@ const DishesList = props => {
   return (
     <div className="dishesList">
       {dishes.length === 0 ? (
-        <Loading/>
+        <Loading />
       ) : (
         dishes.map(dish => <Dish key={dish.idMeal} dish={dish} />)
       )}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import {
   searchByIngredients,
   setIngredient,
@@ -9,10 +10,13 @@ import {
 const IngredientSearch = props => {
   const { searchByIngredients, setIngredient } = props;
   const [ingredient, setStateIngredient] = useState('');
+  const history = useHistory();
+
   const submitIngredient = e => {
     e.preventDefault();
     setIngredient(ingredient);
     searchByIngredients(ingredient);
+    history.push(`/search/${ingredient}`);
   };
   return (
     <div className="searchForm">

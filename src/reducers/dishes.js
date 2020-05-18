@@ -4,7 +4,7 @@ export default (state = { dishes: [], isFetching: false, isSearching: false }, a
   switch (action.type) {
     case FETCH_DISHES:
       return {
-        ...state, dishes: action.dishes, isFetching: false, isSearching: false,
+        ...state, dishes: action.dishes, isFetching: false, isSearching: true,
       };
     case FETCHING:
       return { ...state, isFetching: true };

@@ -18,31 +18,34 @@ const Dish = props => {
   let i = 0;
 
   return (
-    <div className="dish-container">
-      {Object.keys(dish).length <= 0 ? (<Loading/>) : (
-        <div className="dish">
-          <h1>{strMeal}</h1>
-          <img src={strMealThumb} alt={strMeal} />
-          <div className="instructions">
-            <h3>Instructions</h3>
-            <p>{strInstructions}</p>
-          </div>
-          <div className="ingredients">
-            <h3>Ingredients</h3>
-            <ul>
-              {ingredients.length === 0 ? (
-                <li>No Ingredient available</li>
-              ) : (
-                ingredients.map(ingredient => {
-                  i += 1;
-                  return <li key={i}>{ingredient}</li>;
-                })
-              )}
-            </ul>
+    <div>
+      {Object.keys(dish).length <= 0 ? (
+        <Loading />
+      ) : (
+        <div className="dish-container">
+          <div className="dish">
+            <h1>{strMeal}</h1>
+            <img src={strMealThumb} alt={strMeal} />
+            <div className="instructions">
+              <h3>Instructions</h3>
+              <p>{strInstructions}</p>
+            </div>
+            <div className="ingredients">
+              <h3>Ingredients</h3>
+              <ul>
+                {ingredients.length === 0 ? (
+                  <li>No Ingredient available</li>
+                ) : (
+                  ingredients.map(ingredient => {
+                    i += 1;
+                    return <li key={i}>{ingredient}</li>;
+                  })
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       )}
-
     </div>
   );
 };

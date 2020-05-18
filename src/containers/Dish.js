@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { fetchDish } from '../actions/dish';
 import { getIngredients } from '../utils/dish';
 import '../styles/dish.scss';
+import { Loading } from '../components/Loading';
 
 const Dish = props => {
   const { dishId } = useParams();
@@ -18,7 +19,7 @@ const Dish = props => {
 
   return (
     <div className="dish-container">
-      {Object.keys(dish).length <= 0 ? (<div className="loading">Loading....</div>) : (
+      {Object.keys(dish).length <= 0 ? (<Loading/>) : (
         <div className="dish">
           <h1>{strMeal}</h1>
           <img src={strMealThumb} alt={strMeal} />

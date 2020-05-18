@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { fetchDishes } from '../actions/dishes';
 import { Dish } from '../components/Dish';
 import '../styles/dishes.scss';
+import { Loading } from '../components/Loading';
 
 const DishesList = props => {
   const { categoryId } = useParams();
@@ -15,7 +16,7 @@ const DishesList = props => {
   return (
     <div className="dishesList">
       {dishes.length === 0 ? (
-        <div>Loading...</div>
+        <Loading/>
       ) : (
         dishes.map(dish => <Dish key={dish.idMeal} dish={dish} />)
       )}

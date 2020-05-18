@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { fetchCategories } from '../actions/categories';
 import Category from '../components/Category';
 import '../styles/home.scss';
-
+import loading from'../images/loading.gif'
 const CategoriesList = props => {
   const {
     categories, fetchCategories, dishes, ingredient, isSearching,
@@ -22,7 +22,7 @@ const CategoriesList = props => {
         <div className="categories">
 
           {categories.length === 0 ? (
-            <div>Loading...</div>
+            <div className="loading"><img src={loading} alt="loading"/></div>
           ) : (
             categories.map(cat => <Category key={cat.idCategory} cat={cat} />)
           )}

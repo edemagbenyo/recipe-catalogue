@@ -1,0 +1,26 @@
+.categoriesList{
+  .categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    section.category{
+      width: 40%;
+      margin:20px;
+      padding: 20px;
+      background-color: #003049;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;;
+      align-items: center;
+      a{
+        background-color: #EAE2B7;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #003049;
+        text-decoration: none;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

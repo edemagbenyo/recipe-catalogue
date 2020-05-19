@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <footer>
+    <div
+      class="info"
+    >
+      <p>
+        Delicias © 2020
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

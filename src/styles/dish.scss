@@ -1,0 +1,51 @@
+.loading{
+  display: block;
+  width: 50%;
+  // padding: 40px;
+  img{
+    margin: 50px auto;
+    width: 100%;
+  }
+}
+.dish-container {
+  .dish {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: 100px auto auto;
+    // gri
+    grid-template-areas:
+      "title  ingredients instructions "
+      "image ingredients instructions"
+      "image ingredients instructions";
+    h1 {
+      grid-area: title;
+    }
+    img {
+      grid-area: image;
+      width: 100%;
+      border-radius: 20px;
+    }
+    .ingredients {
+      h3{
+        text-decoration: underline;
+      }
+      padding: 30px;
+      grid-area: ingredients;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+        }
+      }
+    }
+    .instructions {
+      h3{
+        text-decoration: underline;
+      }
+      padding: 30px;
+      grid-area: instructions;
+    }
+  }
+}

@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
-import PropTypes from "prop-types";
-import { fetchDish } from "../actions/dish";
-import { getIngredients } from "../utils/dish";
-import "../styles/dish.scss";
-import { Loading } from "../components/Loading";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { fetchDish } from '../actions/dish';
+import { getIngredients } from '../utils/dish';
+import '../styles/dish.scss';
+import { Loading } from '../components/Loading';
 
-const Dish = (props) => {
+const Dish = props => {
   const { dishId } = useParams();
   const { fetchDish, dish, isFetching } = props;
   useEffect(() => {
@@ -36,7 +36,7 @@ const Dish = (props) => {
                 {ingredients.length === 0 ? (
                   <li>No Ingredient available</li>
                 ) : (
-                  ingredients.map((ingredient) => {
+                  ingredients.map(ingredient => {
                     i += 1;
                     return <li key={i}>{ingredient}</li>;
                   })
@@ -52,11 +52,12 @@ const Dish = (props) => {
 
 Dish.defaultProps = {
   dish: {
-    strMeal: "",
-    strInstructions: "",
-    strMealThumb: "",
+    strMeal: '',
+    strInstructions: '',
+    strMealThumb: '',
   },
   fetchDish: () => undefined,
+  isFetching: false,
 };
 Dish.propTypes = {
   dish: PropTypes.shape({
@@ -65,15 +66,13 @@ Dish.propTypes = {
     strMealThumb: PropTypes.string,
   }),
   fetchDish: PropTypes.func,
+  isFetching: PropTypes.bool,
 };
-const mapDispatchToProps = (dispatch) => ({
-  fetchDish: (dishId) => dispatch(fetchDish(dishId)),
+const mapDispatchToProps = dispatch => ({
+  fetchDish: dishId => dispatch(fetchDish(dishId)),
 });
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    dish: state.dish.dish,
-    isFetching: state.dish.isFetching,
-  };
-};
+const mapStateToProps = state => ({
+  dish: state.dish.dish,
+  isFetching: state.dish.isFetching,
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Dish);

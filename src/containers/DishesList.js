@@ -20,8 +20,8 @@ const DishesList = props => {
       {isFetching ? (
         <Loading />
       ) : (
-        dishes.length==0 ? (<div className="notfound"><p>No dish found!</p></div>):
-        dishes.map(dish => <Dish key={dish.idMeal} dish={dish} />)
+        dishes.length === 0 ? (<div className="notfound"><p>No dish found!</p></div>)
+          : dishes.map(dish => <Dish key={dish.idMeal} dish={dish} />)
       )}
     </div>
   );
@@ -39,15 +39,13 @@ DishesList.propTypes = {
     }),
   ),
   fetchDishes: PropTypes.func,
-  isFetching: PropTypes.bool
+  isFetching: PropTypes.bool,
 };
 const mapDispatchToProps = dispatch => ({
   fetchDishes: category => dispatch(fetchDishes(category)),
 });
-const mapStateToProps = state => {
-  return {
-    dishes: state.dishes.dishes,
-    isFetching: state.dishes.isFetching
-  }
-};
+const mapStateToProps = state => ({
+  dishes: state.dishes.dishes,
+  isFetching: state.dishes.isFetching,
+});
 export default connect(mapStateToProps, mapDispatchToProps)(DishesList);

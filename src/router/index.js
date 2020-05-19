@@ -6,7 +6,6 @@ import Dish from '../containers/Dish';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SearchResult from '../containers/SearchResult';
-// import SearchResult from '../components/SearchResult';
 
 export default (
   <Router>
@@ -14,6 +13,9 @@ export default (
     <Switch>
       <Route exact path="/search/:ingredient">
         <SearchResult />
+      </Route>
+      <Route path="/search/:ingredient/:dishId">
+        <Dish />
       </Route>
       <Route path="/:categoryId/:dishId">
         <Dish />

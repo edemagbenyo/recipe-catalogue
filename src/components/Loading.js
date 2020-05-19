@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import loading from '../images/loading.gif';
 
